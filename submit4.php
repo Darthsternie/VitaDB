@@ -34,7 +34,7 @@
 		die("Unauthorized access.");
 	}
 	
-	$sth = mysqli_prepare($con,"SELECT roles FROM vitadb_users WHERE email=? AND password=?");
+	$sth = mysqli_prepare($con,"SELECT roles FROM pspdb_users WHERE email=? AND password=?");
 	mysqli_stmt_bind_param($sth, "ss", $email, $pass);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
@@ -45,7 +45,7 @@
 		}
 		mysqli_stmt_close($sth);
 		if ((strcmp($roles[0],"1") == 0) or (strcmp($roles[0],"2") == 0)){
-			$sth2 = mysqli_prepare($con,"INSERT INTO vitadb_bounties (bid, project) VALUES (?,?)");
+			$sth2 = mysqli_prepare($con,"INSERT INTO pspdb_bounties (bid, project) VALUES (?,?)");
 			mysqli_stmt_bind_param($sth2, "ss", $bid, $project);
 			mysqli_stmt_execute($sth2);
 			mysqli_stmt_close($sth2);
@@ -53,7 +53,7 @@
 			\Codebird\Codebird::setConsumerKey('', '');
 			$cb = \Codebird\Codebird::getInstance();
 			$cb->setToken('', '');
-			$tweet_text = "A new bounty has been added to Vita Nuova tracker! More info is available here: https://www.bountysource.com/issues/$bid";
+			$tweet_text = "A new bounty has been added to PSPDB tracker! More info is available here: https://www.bountysource.com/issues/$bid";
 			$reply = $cb->statuses_update([
 				'status' => $tweet_text
 			]);

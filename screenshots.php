@@ -19,7 +19,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	$sth = mysqli_prepare($con,"SELECT * FROM vitadb_users WHERE email=? AND password=?");
+	$sth = mysqli_prepare($con,"SELECT * FROM pspdb_users WHERE email=? AND password=?");
 	mysqli_stmt_bind_param($sth, "ss", $id, $pass);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
@@ -31,7 +31,7 @@
 		}
 		mysqli_stmt_close($sth);
 		if ((strcmp($roles[0],"1") == 0) or (strcmp($roles[0],"2") == 0) or (strcmp($roles[0],"3") == 0)){
-			$uploaddir = '/customers/8/5/0/rinnegatamante.it/httpd.www/vitadb/screenshots/';
+			$uploaddir = '/screenshots/';
 			$file_count = count($_FILES['sshots']['name']);
 			$i = 0;
 			$res = "";

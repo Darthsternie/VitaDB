@@ -1,4 +1,4 @@
-var app = angular.module('VitaDB', ['ngRoute', 'ngAnimate', 'angularFileUpload', 'angular-marquee', 'angularCSS', 'angular.filter'])
+var app = angular.module('PSPDB', ['ngRoute', 'ngAnimate', 'angularFileUpload', 'angular-marquee', 'angularCSS', 'angular.filter'])
 
 app.run(function ($http, $rootScope, $location){
 	if (localStorage.getItem('id') && localStorage.getItem('token')) {

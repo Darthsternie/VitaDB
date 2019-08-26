@@ -8,11 +8,11 @@
 	setcookie("XSRF-TOKEN", $xsrf);
 ?>
 <!DOCTYPE html>
-<html ng-app="VitaDB">
+<html ng-app="PSPDB">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>VitaDB by Vita Nuova</title>
+		<title>PSPDB by Darthsternie</title>
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<link href="templates/lumino/css/bootstrap.min.css" rel="stylesheet">
 		<link href="templates/lumino/css/datepicker3.css" rel="stylesheet">
@@ -74,7 +74,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#/"><span>Vita</span>DB</a>
+					<a class="navbar-brand" href="#/"><span>PSP</span>DB</a>
 					<ul class="user-menu">
 						<li class="dropdown pull-right">
 							<a href="" class="dropdown-toggle" data-toggle="dropdown">

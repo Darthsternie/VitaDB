@@ -9,18 +9,18 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_query($con,"SELECT * FROM vitadb WHERE type < 8 ORDER BY date DESC");
+	$sth = mysqli_query($con,"SELECT * FROM pspdb WHERE type < 8 ORDER BY date DESC");
 	if ($sth){
 		$rows = array();
 		while($r = mysqli_fetch_assoc($sth)) {
 			
 			// Downloads counter support
-			$masked_link = "https://vitadb.rinnegatamante.it/get_hb_link.php?id=" . $r['id'];
+			$masked_link = "https://pspdb.darthsternie.net/get_hb_link.php?id=" . $r['id'];
 			unset($r['url']);
 			$r['url'] = $masked_link;
 			
 			// Redirect patch for when bintray is off
-			$data = $r['data'];
+			/*$data = $r['data'];
 			$data = str_replace("https://bintray.com/vitadb/VitaDB/download_file?file_path=",
 				"https://dl.coolatoms.org/vitadb/",
 				$data);
@@ -28,7 +28,7 @@
 			$data = str_replace("+", " ", $data);
 			unset($r['data']);
 			$r['data'] = $data;
-			
+			*/
 			$rows[] = $r;
 		}
 		

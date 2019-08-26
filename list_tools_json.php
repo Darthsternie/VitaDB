@@ -9,7 +9,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 	
 	
-	$sth = mysqli_query($con,"SELECT * FROM vitadb WHERE type = 9 ORDER BY date DESC");
+	$sth = mysqli_query($con,"SELECT * FROM pspdb WHERE type = 9 ORDER BY date DESC");
 	if ($sth){
 		$rows = array();
 		while($r = mysqli_fetch_assoc($sth)) {
@@ -19,7 +19,7 @@
 			unset($r['titleid']);
 			
 			// Downloads counter support
-			$masked_link = "https://vitadb.rinnegatamante.it/get_hb_link.php?id=" . $r['id'];
+			$masked_link = "https://pspdb.darthsternie.net/get_hb_link.php?id=" . $r['id'];
 			unset($r['url']);
 			$r['url'] = $masked_link;
 			

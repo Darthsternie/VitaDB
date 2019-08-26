@@ -17,7 +17,7 @@
 					</thead>
 					<tbody>
 						<tr ng-repeat="sup in users">
-							<td><a href="#/user/{{sup.name}}"><img class="icon" src="https://rinnegatamante.it/vitadb/avatars/{{sup.avatar}}" style="max-width: 64px;" /></a></td>
+							<td><a href="#/user/{{sup.name}}"><img class="icon" src="https://darthsternie.net/pspdb/avatars/{{sup.avatar}}" style="max-width: 64px;" /></a></td>
 							<td><a href="#/user/{{sup.name}}">{{sup.name}}</a></td>
 							<td>{{sup.supporter_date}}</td>
 						</tr>

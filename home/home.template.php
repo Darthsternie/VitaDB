@@ -12,7 +12,7 @@
 			</div>
 		</ol>
 		<ol class="breadcrumb-alert">
-			<b>Note:</b> You can now download homebrews from VitaDB directly from your PSVITA by using <a href="http://vitadb.rinnegatamante.it/#/info/205">Vita Homebrew Browser</a> by <a href="#/user/devnoname120">devnoname120</a>.
+			<b>Note:</b> There is currently no Homebrew that allows you to download other Homebrew directly to your PSP.
 		</ol>
 	</div>
 	<br>

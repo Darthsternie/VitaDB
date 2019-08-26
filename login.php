@@ -20,7 +20,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_prepare($con,"SELECT email,password,name,roles FROM vitadb_users WHERE email=? AND password=?");
+	$sth = mysqli_prepare($con,"SELECT email,password,name,roles FROM pspdb_users WHERE email=? AND password=?");
 	mysqli_stmt_bind_param($sth, "ss", $email, $pass);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);

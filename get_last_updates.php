@@ -6,7 +6,7 @@
 	if (mysqli_connect_errno()){
 		die("Connection failed: " . mysqli_connect_error());
 	} 
-	$sth = mysqli_query($con,"SELECT * FROM vitadb_log ORDER BY id DESC LIMIT 5");
+	$sth = mysqli_query($con,"SELECT * FROM pspdb_log ORDER BY id DESC LIMIT 5");
 	while($r = mysqli_fetch_assoc($sth)) {
 		$rows[] = $r;	
 	}

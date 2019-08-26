@@ -84,7 +84,7 @@
 		die("Connection failed: " .  mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_prepare($con,"SELECT counter, timestamp, total FROM vitadb_ips WHERE ip=?");
+	$sth = mysqli_prepare($con,"SELECT counter, timestamp, total FROM pspdbdb_ips WHERE ip=?");
 	mysqli_stmt_bind_param($sth, "i", $client_ip);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
@@ -105,19 +105,19 @@
 				$abort = true;
 			}
 		}
-		$sth2 = mysqli_prepare($con,"UPDATE vitadb_ips SET timestamp=?,counter=?,total=? WHERE ip=?");
+		$sth2 = mysqli_prepare($con,"UPDATE pspdb_ips SET timestamp=?,counter=?,total=? WHERE ip=?");
 		mysqli_stmt_bind_param($sth2, "iiii", $cur_time, $counter, $global_counter, $client_ip);
 		mysqli_stmt_execute($sth2);
 		mysqli_stmt_close($sth2);
 	} else { // No IP entry, pushing a new one
-		$sth2 = mysqli_prepare($con,"INSERT INTO vitadb_ips (ip, timestamp, counter, total) VALUES (?,?,?,?)");
+		$sth2 = mysqli_prepare($con,"INSERT INTO pspdb_ips (ip, timestamp, counter, total) VALUES (?,?,?,?)");
 		mysqli_stmt_bind_param($sth2, "iiii",  $client_ip, $cur_time, $counter, $global_counter);
 		mysqli_stmt_execute($sth2);
 		mysqli_stmt_close($sth2);
 	}
 	
 	if ($abort == false) {
-		$sth = mysqli_prepare($con,"SELECT id,url,downloads FROM vitadb WHERE id=?");
+		$sth = mysqli_prepare($con,"SELECT id,url,downloads FROM pspdb WHERE id=?");
 		mysqli_stmt_bind_param($sth, "i", $id);
 		mysqli_stmt_execute($sth);
 		mysqli_stmt_bind_result($sth, $id, $url, $downloads);
@@ -125,7 +125,7 @@
 		mysqli_stmt_close($sth);
 		$downloads=$downloads+1;
 		
-		$sth3 = mysqli_prepare($con,"UPDATE vitadb SET downloads=? WHERE id=?");
+		$sth3 = mysqli_prepare($con,"UPDATE pspdb SET downloads=? WHERE id=?");
 		mysqli_stmt_bind_param($sth3, "ii", $downloads, $id);
 		mysqli_stmt_execute($sth3);
 		mysqli_stmt_close($sth3);

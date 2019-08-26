@@ -18,7 +18,7 @@
 						</div>
 						<div class="form-group">
 							<h4>Size: </h4>
-							<span ng-if="conf.type < 8" style="white-space: pre-line;">VPK Size: {{conf.size}}<br></span>
+							<span ng-if="conf.type < 8" style="white-space: pre-line;">Homebrew Size: {{conf.size}}<br></span>
 							<span ng-if="conf.type == 8" style="white-space: pre-line;">Plugin Size: {{conf.size}}</span>
 							<span ng-if="conf.type == 9" style="white-space: pre-line;">Tool Size: {{conf.size}}</span>
 							<span ng-if="conf.data.length > 0" style="white-space: pre-line;">Data Files Size: {{conf.data_size}}</span>

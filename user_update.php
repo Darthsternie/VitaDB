@@ -45,14 +45,14 @@
 	/*$new_xsrf = updateXSRF($con);
 	$_COOKIE['XSRF-TOKEN'] = $new_xsrf;*/
 	
-	$sth = mysqli_prepare($con,"SELECT roles FROM vitadb_users WHERE email=? AND password=? AND name=?");
+	$sth = mysqli_prepare($con,"SELECT roles FROM pspdb_users WHERE email=? AND password=? AND name=?");
 	mysqli_stmt_bind_param($sth, "sss", $email, $pass, $name);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
 	
 	if (mysqli_num_rows($data)>0){
 		mysqli_stmt_close($sth);
-		$sth2 = mysqli_prepare($con,"UPDATE vitadb_users SET avatar=?,twitter=?,github=?,website=?,hidden_mail=?,paypal=?,bitcoin=?,patreon=? WHERE name=?");
+		$sth2 = mysqli_prepare($con,"UPDATE pspdb_users SET avatar=?,twitter=?,github=?,website=?,hidden_mail=?,paypal=?,bitcoin=?,patreon=? WHERE name=?");
 		if (strcmp($avatar, "unknown.jpg")==0){
 			$avatar = "";
 			mysqli_stmt_bind_param($sth2, "sssssssss", $avatar, $twitter, $github, $website, $hidden, $paypal, $bitcoin, $patreon, $name);
@@ -65,7 +65,7 @@
 	
 		
 		// Checking if an avatar update is requested
-		$uploaddir = '/customers/8/5/0/rinnegatamante.it/httpd.www/vitadb/avatars/';
+		$uploaddir = '/avatars/';
 		$decomponed_url = explode(".",$avatar);
 		if (file_exists($uploaddir . hash("sha256",$name) . ".tmp.png")){
 			if (file_exists($uploaddir . $name . ".png")) unlink($uploaddir . hash("sha256",$name) . ".png");

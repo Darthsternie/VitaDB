@@ -1,4 +1,4 @@
-<?
+<?php
 $servername = "SERVER";
 $username = "USERNAME";
 $password = "PASS";

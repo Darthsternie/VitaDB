@@ -9,7 +9,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_query($con,"SELECT DISTINCT name,avatar,supporter_date FROM vitadb_users WHERE roles LIKE '%6%'");
+	$sth = mysqli_query($con,"SELECT DISTINCT name,avatar,supporter_date FROM pspdb_users WHERE roles LIKE '%6%'");
 	if ($sth){
 		$rows = array();
 		while($r = mysqli_fetch_assoc($sth)) {

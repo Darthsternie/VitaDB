@@ -16,7 +16,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_prepare($con,"SELECT name,icon,version,author,type,description,id,data,date,titleid,screenshots,long_description,downloads,source,release_page,trailer,size,data_size FROM vitadb WHERE id=?");
+	$sth = mysqli_prepare($con,"SELECT name,icon,version,author,type,description,id,data,date,titleid,screenshots,long_description,downloads,source,release_page,trailer,size,data_size FROM pspdb WHERE id=?");
 	mysqli_stmt_bind_param($sth, "i", $id);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
@@ -24,7 +24,7 @@
 	while($r = mysqli_fetch_assoc($data)) {
 				
 		// Downloads counter support
-		$masked_link = "https://vitadb.rinnegatamante.it/get_hb_link.php?id=" . $r['id'];
+		$masked_link = "https://pspdb.darthsternie.net/get_hb_link.php?id=" . $r['id'];
 		$r['url'] = $masked_link;
 		
 		// Redirect patch for when bintray is off

@@ -30,13 +30,13 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_prepare($con,"SELECT email,name FROM vitadb_users WHERE email=? OR name=?");
+	$sth = mysqli_prepare($con,"SELECT email,name FROM pspdb_users WHERE email=? OR name=?");
 	mysqli_stmt_bind_param($sth, "ss", $email, $name);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
 	if (mysqli_num_rows($data) <= 0){
 		mysqli_stmt_close($sth);
-		$sth2 = mysqli_prepare($con,"INSERT INTO vitadb_users (email, password, roles, avatar, twitter, website, github, name, hidden_mail, supporter_date, paypal, bitcoin, patreon) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+		$sth2 = mysqli_prepare($con,"INSERT INTO pspdb_users (email, password, roles, avatar, twitter, website, github, name, hidden_mail, supporter_date, paypal, bitcoin, patreon) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
 		mysqli_stmt_bind_param($sth2, "ssssssssissss", $email, $pass, $role, $empty, $empty, $empty, $empty, $name, $one, $empty, $empty, $empty, $empty);
 		mysqli_stmt_execute($sth2);
 		mysqli_stmt_close($sth2);

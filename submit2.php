@@ -60,7 +60,7 @@
 		die("Unauthorized access.");
 	}
 	
-	$sth = mysqli_prepare($con,"SELECT roles FROM vitadb_users WHERE email=? AND password=?");
+	$sth = mysqli_prepare($con,"SELECT roles FROM pspdb_users WHERE email=? AND password=?");
 	mysqli_stmt_bind_param($sth, "ss", $email, $pass);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
@@ -90,17 +90,17 @@
 				$size = $content_length;
 			}
 			
-			$sth2 = mysqli_prepare($con,"INSERT INTO vitadb (name, icon, version, author, url, type, description, data, date, titleid, long_description, screenshots, source, release_page, trailer, size, data_size) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			$sth2 = mysqli_prepare($con,"INSERT INTO pspdb (name, icon, version, author, url, type, description, data, date, titleid, long_description, screenshots, source, release_page, trailer, size, data_size) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			mysqli_stmt_bind_param($sth2, "sssssisssssssssss", $name, $icon, $version, $author, $url, $type, $description, $url3, $day, $titleid, $long_description, $sshot, $source, $release_page, $trailer, $size, $size2);
 			mysqli_stmt_execute($sth2);
 			mysqli_stmt_close($sth2);
-			$sth3 = mysqli_prepare($con,"INSERT INTO vitadb_log(author,object,hb,date) VALUES(?,?,?,?)");
+			$sth3 = mysqli_prepare($con,"INSERT INTO pspdb_log(author,object,hb,date) VALUES(?,?,?,?)");
 			$obj = "added";
 			$date = date('Y-m-d H:i:s');
 			mysqli_stmt_bind_param($sth3, "ssss", $log_author, $obj, $name, $date);
 			mysqli_stmt_execute($sth3);
 			mysqli_stmt_close($sth3);
-			$sth4 = mysqli_query($con,"SELECT MAX(id) AS id FROM vitadb");
+			$sth4 = mysqli_query($con,"SELECT MAX(id) AS id FROM pspdb");
 			$row = mysqli_fetch_array($sth4);
 			$hb_id = $row['id'];
 			require_once ('codebird.php');
@@ -116,7 +116,7 @@
 				} else {
 					$first = 2;
 				}
-				$sth4 = mysqli_prepare($con,"SELECT twitter FROM vitadb_users WHERE name=?");
+				$sth4 = mysqli_prepare($con,"SELECT twitter FROM pspdb_users WHERE name=?");
 				mysqli_stmt_bind_param($sth4, "s", $person);
 				mysqli_stmt_execute($sth4);
 				$data = mysqli_stmt_get_result($sth4);
@@ -138,21 +138,21 @@
 				$screenshots = explode(';', $sshot);
 				$cb->setRemoteDownloadTimeout(10000);
 				foreach ($screenshots as $screenshot) {
-					$sshot_url = "https://vitadb.rinnegatamante.it/" . $screenshot;
+					$sshot_url = "https://pspdb.darthsternie.net/" . $screenshot;
 					$reply = $cb->media_upload(array(
 						'media' => $sshot_url
 					));
 					$media_ids[] = $reply->media_id_string;
 				}
 				$media_ids = implode(',', $media_ids);
-				$tweet_text = "$name $version by $author can now be downloaded from VitaDB or Easy Plugin! More info is available here: https://vitadb.rinnegatamante.it/#/info/$hb_id";
+				$tweet_text = "$name $version by $author can now be downloaded from PSPDB! More info is available here: https://pspdb.darthsternie.net/#/info/$hb_id";
 				$reply = $cb->statuses_update([
 					'status' => $tweet_text,
 					'media_ids' => $media_ids
 				]);
 				print_r($reply);
 			} else {
-				$tweet_text = "$name $version by $author can now be downloaded from VitaDB or Easy Plugin! More info is available here: https://vitadb.rinnegatamante.it/#/info/$hb_id";
+				$tweet_text = "$name $version by $author can now be downloaded from PSPDB! More info is available here: https://pspdb.darthsternie.net/#/info/$hb_id";
 				$reply = $cb->statuses_update([
 					'status' => $tweet_text
 				]);

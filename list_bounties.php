@@ -9,7 +9,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_query($con,"SELECT * FROM vitadb_bounties ORDER BY id ASC");
+	$sth = mysqli_query($con,"SELECT * FROM pspdb_bounties ORDER BY id ASC");
 	if ($sth){
 		$rows = array();
 		while($r = mysqli_fetch_assoc($sth)) {

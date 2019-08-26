@@ -12,7 +12,7 @@
 			</div>
 		</ol>
 		<ol class="breadcrumb-alert">
-			<b>Note:</b> You can now download plugins from VitaDB directly from your PSVITA by using <a href="http://vitadb.rinnegatamante.it/#/info/440">Easy Plugin</a> by <a href="#/user/THEN00P">THEN00P</a>.
+			<b>Note:</b> There is currently no Homebrew that allows you to download plugins directly to your PSP.
 		</ol>
 	</div>
 	<br>
