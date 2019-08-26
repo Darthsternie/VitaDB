@@ -4,7 +4,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<i class="fa fa-plus" aria-hidden="true"></i> &nbsp;
-				Submit a new Vita bounty
+				Submit a new PSP bounty
 			</div>
 			<div class="panel-body">
 				<form role="form" ng-submit="submit()">

@@ -29,18 +29,18 @@
 						<div class="form-group">
 							<b>Get Homebrews List</b>: <br>
 							<ul>
-								<li><b>HTTP</b>: http://darthsternie.net/vitadb/list_hbs_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
-								<li><b>HTTPS</b>: https://darthsternie.net/vitadb/list_hbs_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
+								<li><b>HTTP</b>: http://pspdb.darthsternie.net/list_hbs_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
+								<li><b>HTTPS</b>: https://pspdb.darthsternie.net/list_hbs_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
 							</ul>
 							<b>Get Plugins List</b>: <br>
 							<ul>
-								<li><b>HTTP</b>: http://darthsternie.net/vitadb/list_plugins_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
-								<li><b>HTTPS</b>: https://darthsternie.net/vitadb/list_plugins_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
+								<li><b>HTTP</b>: http://pspdb.darthsternie.net/list_plugins_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
+								<li><b>HTTPS</b>: https://pspdb.darthsternie.net/list_plugins_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
 							</ul>
 							<b>Get PC Tools List</b>: <br>
 							<ul>
-								<li><b>HTTP</b>: http://darthsternie.net/vitadb/list_tools_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
-								<li><b>HTTPS</b>: https://darthsternie.net/vitadb/list_tools_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
+								<li><b>HTTP</b>: http://pspdb.darthsternie.net/list_tools_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
+								<li><b>HTTPS</b>: https://pspdb.darthsternie.net/list_tools_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
 							</ul>
 						</div>
 					</fieldset>

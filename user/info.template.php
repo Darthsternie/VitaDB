@@ -6,7 +6,7 @@
 			<div class="panel panel-widget ">
 				<div class="row no-padding">
 					<div class="col-md-4">
-						<center><img class="icon" src="https://rinnegatamante.it/vitadb/avatars/{{conf.avatar}}" style="max-width: 50%;" /></center> 
+						<center><img class="icon" src="https://pspdb.darthsternie.net/avatars/{{conf.avatar}}" style="max-width: 50%;" /></center> 
 					</div>
 					<div class="col-md-8">
 						<h4 style="white-space: nowrap;overflow: hidden;"><b>{{conf.name}}</b></h3>
@@ -39,11 +39,11 @@
 							</thead>
 							<tbody>
 								<tr ng-repeat="brew in conf.hbs">
-									<td><a href="#/info/{{brew.id}}"><img class="icon" src="https://rinnegatamante.it/vitadb/icons/{{brew.icon}}" style="max-width: 64px;" /></a></td>
+									<td><a href="#/info/{{brew.id}}"><img class="icon" src="https://pspdb.darthsternie.net/icons/{{brew.icon}}" style="max-width: 64px;" /></a></td>
 									<td><a href="#/info/{{brew.id}}">{{brew.name}} {{brew.version}}</a></td>
 									<td>{{brew.date}}</td>
 									<td>
-										<a href="{{brew.url}}"><input type="submit" value="Download VPK" class="btn btn-primary" /></a>
+										<a href="{{brew.url}}"><input type="submit" value="Download ZIP" class="btn btn-primary" /></a>
 										<a href="{{brew.data}}" ng-if="brew.data.length > 0"><br><input type="submit" value="Download Data Files" class="btn btn-primary" /></a>
 									</td>
 								</tr>
